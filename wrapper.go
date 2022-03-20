@@ -8,7 +8,7 @@ import (
 	"unsafe"
 
 	// to avoid repeatedly writing leopard.Leopard* below:
-	. "github.com/celestiaorg/go-leopard/leopard"
+	. "github.com/Paperman-tom/goLeopard/leopard"
 )
 
 var (

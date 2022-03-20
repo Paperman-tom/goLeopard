@@ -1,5 +1,3 @@
-module github.com/celestiaorg/go-leopard
+module goLeopard
 
-go 1.14
-
-require github.com/stretchr/testify v1.5.1
+go 1.17
