@@ -6,7 +6,7 @@
 package leopard
 
 /*
-#cgo LDFLAGS: -llibleopard -lstdc++
+#cgo LDFLAGS: -llibleopard -lstdc++ -fopenmp
 #cgo linux LDFLAGS: -fopenmp -ldl
 #cgo linux CFLAGS: -fopenmp -DENABLE_OPENMP
 #include "leopard.h"

@@ -1,6 +1,6 @@
 # default target: build if necessary and run tests
 test: install-cleo
-	GODEBUG=cgocheck=2 go test -v ./...
+	go test -v ./...
 
 # only necessary if you need to re-generate the c-go bindings
 # Note: deletes all previously generated c-go bindings and
@@ -10,11 +10,11 @@ re-generate: clean_generated
 
 # init leopard submodule and build C library
 # install library to $INSTALL_DIR (defaults to /usr/local/lib)
-INSTALL_DIR ?= /usr/local/lib
+INSTALL_DIR ?= D:\mingw-w64\mingw64\lib
 build-cleo:
 	git submodule update --init --recursive
-	mkdir -p leopard/build && cd leopard/build && cmake ../leopard
-	cd leopard/build && make libleopard
+	cd leopard/build && cmake ../leopard -D"CMAKE_MAKE_PROGRAM:PATH=D:/mingw-w64/mingw64/bin/make.exe"
+	cd leopard/build && make
 
 install-cleo: build-cleo
 	cp leopard/build/liblibleopard.a $(INSTALL_DIR)/
